@@ -305,6 +305,38 @@ SWIFT_CLASS("_TtC12ShieldSquare13SSURLProtocol")
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
 @end
 
+@class UIWindow;
+
+SWIFT_CLASS("_TtC12ShieldSquare12ShieldEngine")
+@interface ShieldEngine : NSObject
+/// This is the initilization method for the SDK
+/// note:
+/// For ReCAPTCHA add the key and domain in the plist.info
+/// \param keyWindow UIWindow from client App
+///
+/// \param verifyViewType To change captcha view type.
+/// <ul>
+///   <li>
+///     text captcha is selected by default
+///   </li>
+///   <li>
+///     To change the captcha type to ReCAPTCHA pass ShieldEngine.SSCaptchaViewType.ssrecaptcha
+///   </li>
+/// </ul>
+///
+///
+/// returns:
+///
+/// void
++ (void)setupWithKeyWindow:(UIWindow * _Nonnull)keyWindow verifyViewType:(NSInteger)verifyViewType;
++ (void)enableSSLogsWithEnableLogs:(BOOL)enableLogs;
+/// To set the user ID of the visitor if the user has logged in.
+/// \param userId userId for the logged in user
+///
++ (void)setUserIdWithUserId:(NSString * _Nonnull)userId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC12ShieldSquare20ShieldNetworkManager")
 @interface ShieldNetworkManager : NSObject

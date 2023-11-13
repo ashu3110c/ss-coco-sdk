@@ -529,15 +529,15 @@ public struct SSEventType {
   public static let DEFAULT: Swift.Int
   public static let CUSTOMER: Swift.Int
 }
-@_hasMissingDesignatedInitializers public class ShieldEngine {
+@_inheritsConvenienceInitializers @objc public class ShieldEngine : ObjectiveC.NSObject {
   public struct SSCaptchaViewType {
     public static let sscheckboxcaptcha: Swift.Int
     public static let sstextcaptcha: Swift.Int
     public static let ssrecaptcha: Swift.Int
   }
-  public static func setup(keyWindow: UIKit.UIWindow, verifyViewType: Swift.Int = ShieldEngine.SSCaptchaViewType.sscheckboxcaptcha)
-  public static func enableSSLogs(enableLogs: Swift.Bool = false)
-  public static func setUserId(userId: Swift.String)
+  @objc public static func setup(keyWindow: UIKit.UIWindow, verifyViewType: Swift.Int = ShieldEngine.SSCaptchaViewType.sscheckboxcaptcha)
+  @objc public static func enableSSLogs(enableLogs: Swift.Bool = false)
+  @objc public static func setUserId(userId: Swift.String)
   public static func makeCalltypeFive()
   public static func makeCalltypeEight()
   public func getBlockDigestID() -> Swift.String
@@ -555,6 +555,7 @@ public struct SSEventType {
   public static func logShieldEvents(resultObject: Foundation.HTTPURLResponse?)
   public static func getCookiesFromResponse() -> [Swift.String : Any]
   public static func logDebugValues(message: Swift.String?, items: Any?)
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class ShieldNetworkManager : ObjectiveC.NSObject {
